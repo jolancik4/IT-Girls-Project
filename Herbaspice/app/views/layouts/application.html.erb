@@ -8,17 +8,28 @@
 </head>
 <body class="<%= controller.controller_name %>">
 <div id="banner">
-<%= image_tag("logo.png") %>
+<%= image_tag "logo.jpg", :size=> "150x80" %>
 <%= @page_title || "Herba'spice" %>
-</div>
+</div> <br><br>
 <div id="columns">
  <div id="side">
- <ul>
- <li><a href="http://www....">Home</a></li>
- <li><a href="http://www..../faq">Questions</a></li>
- <li><a href="http://www..../news">News</a></li>
- <li><a href="http://www..../contact">Contact</a></li>
- </ul>
+ <form accept-charset="UTF-8" action="/search" method="get">
+  <input id="page" name="page" type="hidden" value="1" />
+  <input id="q" name="q" placeholder="Search" required="required" type="search" />
+  <input name="utf8" type="hidden" value="✓">
+  <input type="submit" value="Go" /><br><br><br>
+</form>
+<h2>Categories</h2>
+    <ul>
+        <li><a href="http://www..../Culinary herbs">Culinary herbs</a></li>
+        <li><a href="http://www..../Herbs for tea">Herbs for tea</li>
+        <li><a href="http://www..../Scented herbs">Scented herbs</li>
+        <li><a href="http://www..../Chiles">Chiles</li>
+        <li><a href="http://www..../Organic Spices">Organic Spices</li>
+        <li><a href="http://www..../Baking spices">Baking spices</li>
+        <li><a href="http://www..../Seeds">Seeds</li>
+        <li><a href="http://www..../Accessories">Accessories</li>
+    </ul>
  </div>
  <div id="main">
  <%= yield %>
