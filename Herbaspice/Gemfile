@@ -35,7 +35,7 @@ end
 #START:bcrypt
 # Use ActiveModel has_secure_password
 #START_HIGHLIGHT
-gem 'bcrypt-ruby', '~> 3.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 #END_HIGHLIGHT
 #END:bcrypt
 
