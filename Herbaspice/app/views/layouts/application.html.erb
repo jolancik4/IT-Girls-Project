@@ -2,38 +2,48 @@
 <head>
 <html>
 <title>Herba'spice</title>
-<%= stylesheet_link_tag "application", media: "all","data-turbolinks-track" => true %>
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-<%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "application", media: "all","data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller.controller_name %>">
-<div id="banner">
-<%= image_tag "logo.jpg", :size=> "150x80" %>
-<%= @page_title || "Herba'spice" %>
-</div> <br><br>
-<div id="columns">
- <div id="side">
- <form accept-charset="UTF-8" action="/search" method="get">
-  <input id="page" name="page" type="hidden" value="1" />
-  <input id="q" name="q" placeholder="Search" required="required" type="search" />
-  <input name="utf8" type="hidden" value="✓">
-  <input type="submit" value="Go" /><br><br><br>
-</form>
-<h2>Categories</h2>
-    <ul>
+  <div id="banner">
+    <%= image_tag "logo.jpg", :size=> "150x80" %>
+    <%= @page_title || "Herba'spice" %>
+  </div> <br><br>
+
+  <div id="columns">
+    <div id="side">
+      <form accept-charset="UTF-8" action="/search" method="get">
+      <input id="page" name="page" type="hidden" value="1" />
+      <input id="q" name="q" placeholder="Search" required="required" type="search" />
+      <input name="utf8" type="hidden" value="✓">
+      <input type="submit" value="Go" />
+      </form>
+      <br><br><br>
+      <h2>Categories</h2>
+      <ul>
         <li><a href="http://www..../Culinary herbs">Culinary herbs</a></li>
-        <li><a href="http://www..../Herbs for tea">Herbs for tea</li>
-        <li><a href="http://www..../Scented herbs">Scented herbs</li>
-        <li><a href="http://www..../Chiles">Chiles</li>
-        <li><a href="http://www..../Organic Spices">Organic Spices</li>
-        <li><a href="http://www..../Baking spices">Baking spices</li>
-        <li><a href="http://www..../Seeds">Seeds</li>
-        <li><a href="http://www..../Accessories">Accessories</li>
-    </ul>
- </div>
- <div id="main">
- <%= yield %>
- </div>
- </div>
+        <li><a href="http://www..../Herbs for tea">Herbs for tea</a></li>
+        <li><a href="http://www..../Scented herbs">Scented herbs</a></li>
+        <li><a href="http://www..../Chiles">Chiles</a></li>
+        <li><a href="http://www..../Organic Spices">Organic Spices</a></li>
+        <li><a href="http://www..../Baking spices">Baking spices</a></li>
+        <li><a href="http://www..../Seeds">Seeds</a></li>
+        <li><a href="http://www..../Accessories">Accessories</a></li>
+      </ul>
+<% if session[:user_id] %>
+<ul>
+<li><%= link_to 'Orders', orders_path %></li>
+<li><%= link_to 'Products', products_path %></li>
+<li><%= link_to 'Users', users_path %></li>
+</ul>
+<%= button_to 'Logout', logout_path, method: :delete %>
+<% end %>
+    </div>
+  </div>
+<div id="main">
+<%= yield %>
+</div>
 </html>
 </body>
