@@ -59,12 +59,14 @@ background: #142;
 
     #cart {
       font-size: smaller;
-      color:     white;
+      color:     black;
 
       table {
-        border-top:    1px dotted #595;
-        border-bottom: 1px dotted #595;
-        margin-bottom: 10px;
+        border-top:    6px dotted #595;
+        border-bottom: 6px dotted #595;
+        border-right: 6px dotted #595;
+        border-left: 6px dotted #595;
+        margin-bottom: 6px;
       }
     }
 
