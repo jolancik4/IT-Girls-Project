@@ -14,6 +14,12 @@
 
   <div id="columns">
     <div id="side">
+      <div id="cart">
+        <% unless @cart.blank? %>
+        <%= render @cart %>
+        <%end%>
+      </div>
+
       <form accept-charset="UTF-8" action="/search" method="get">
       <input id="page" name="page" type="hidden" value="1" />
       <input id="q" name="q" placeholder="Search" required="required" type="search" />
