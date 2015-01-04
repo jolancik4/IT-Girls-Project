@@ -1,5 +1,7 @@
 Herbaspice::Application.routes.draw do
   resources :orders
+  resources :line_items
+  resources :carts
 
   get 'admin' => 'admin#index'
   controller :sessions do
@@ -21,6 +23,11 @@ Herbaspice::Application.routes.draw do
     get :who_bought, on: :member
   end
 
+  get "store/index"
+  resources :products do
+    get :who_bought, on: :member
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
   # See how all your routes lay out with "rake routes".
