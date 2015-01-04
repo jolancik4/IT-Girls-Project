@@ -8,6 +8,7 @@ class OrderNotifier < ActionMailer::Base
   #
   def received(order)
     @order = order
+    
     mail to: order.email, subject: 'Herbaspice Store Order Confirmation'
   end
 
@@ -17,8 +18,8 @@ class OrderNotifier < ActionMailer::Base
   #   en.order_notifier.shipped.subject
   #
   def shipped
-    @greeting = "Hi"
+    @order = order
 
-    mail to: "to@example.org"
+    mail to: order.email, subject: 'Herbaspice Store Order Shipped'
   end
 end
