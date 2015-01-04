@@ -32,7 +32,7 @@ test "requires item in cart" do
       post :create, order: { address: @order.address, email: @order.email, name: @order.name, pay_type: @order.pay_type }
     end
 
-    assert_redirected_to order_path(assigns(:order))
+    assert_redirected_to store_index_path
   end
 
   test "should show order" do
