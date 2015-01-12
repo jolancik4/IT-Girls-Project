@@ -17,12 +17,6 @@ Herbaspice::Application.routes.draw do
   resources :line_items
   resources :carts
 
-  get "welcome/index"
-  get "store/index"
-  resources :products do
-    get :who_bought, on: :member
-  end
-
   get "store/index"
   resources :products do
     get :who_bought, on: :member

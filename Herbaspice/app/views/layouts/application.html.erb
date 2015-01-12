@@ -8,10 +8,19 @@
 </head>
 <body class="<%= controller.controller_name %>">
   <div id="banner">
-    <%= image_tag "logo.jpg", :size=> "150x80" %>
-    <%= @page_title || "Herba'spice" %>
-  </div> <br><br>
+    <%= image_tag "logo.jpg", :size=> "160x85" %> 
+    <%= @page_title || "Herba'spice" %> <br> <br> </div>
+    <tr><h7><td align="right"><a href="/login/">My Account</a><br>
+                      <a href="/users/">Sign In</a></td></h7></tr>
+   <br><br>
 
+    <menu id="herbaspice-main-nav">
+        <a href="/">Home</a>
+        <a href="/products/">Products</a>
+        <a href="/Health/">Health</a>
+        <a href="/About us/">About us</a>
+        <a href="/Contact/">Contact</a>
+    </menu><br>
   <div id="columns">
     <div id="side">
       <div id="cart">
@@ -22,12 +31,12 @@
         <%end%>
       </div> <br>
 <br>
-      <form accept-charset="UTF-8" action="/search" method="get">
-      <input id="page" name="page" type="hidden" value="1" />
-      <input id="q" name="q" placeholder="Search" required="required" type="search" />
-      <input name="utf8" type="hidden" value="✓">
-      <input type="submit" value="Go" />
-      </form>
+<%= form_tag products_path, :method => 'get' do %>  
+  <p>  
+    <%= text_field_tag :search, params[:search] %>  
+    <%= submit_tag "Search", :name => nil %>  
+  </p>  
+<% end %> 
       <br><br><br>
       <h2>Categories</h2>
       <ul>
@@ -52,6 +61,7 @@
   </div>
 <div id="main">
 <%= yield %>
+<div id="mainWrapper"></div>
 </div>
 </html>
 </body>

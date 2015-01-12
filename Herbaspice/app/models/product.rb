@@ -15,6 +15,14 @@ class Product < ActiveRecord::Base
     message: 'must be a URL for GIF, JPG or PNG image.'
   }
   validates :title, length: {minimum: 10}
+  
+  def self.search(search)  
+    if search  
+        find(:all, :conditions => ['title LIKE ?', "%#{search}%"])  
+    else  
+        find(:all)  
+    end  
+  end  
 
   def self.latest
     Product.order(:updated_at).last
