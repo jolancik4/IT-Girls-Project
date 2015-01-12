@@ -8,19 +8,25 @@
 </head>
 <body class="<%= controller.controller_name %>">
   <div id="banner">
-    <%= image_tag "logo.jpg", :size=> "160x85" %> 
-    <%= @page_title || "Herba'spice" %> <br> <br> </div>
+  <div class="wrap">
+    <%= image_tag "logo.jpg", :size=> "210x120" %> 
+    <br> <%= @page_title || "Herba'spice" %> <br> <br> 
+  </div> 
+</div>
+
     <tr><h7><td align="right"><a href="/login/">My Account</a><br>
                       <a href="/users/">Sign In</a></td></h7></tr>
    <br><br>
 
-    <menu id="herbaspice-main-nav">
+<div class="wrap">
+  <menu id="herbaspice-main-nav"> <h2>
         <a href="/">Home</a>
         <a href="/products/">Products</a>
         <a href="/Health/">Health</a>
         <a href="/About us/">About us</a>
-        <a href="/Contact/">Contact</a>
-    </menu><br>
+        <a href="/Contact/">Contact</a></h2>
+    </div></menu>
+  <br>
   <div id="columns">
     <div id="side">
       <div id="cart">
