@@ -1,73 +1,77 @@
 <!DOCTYPE html>
 <head>
-<html>
-<title>Herba'spice</title>
-  <%= stylesheet_link_tag "application", media: "all","data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body class="<%= controller.controller_name %>">
-  <div id="banner">
-  <div class="wrap">
-    <%= image_tag "logo.jpg", :size=> "210x120" %> 
-    <br> <%= @page_title || "Herba'spice" %> <br> <br> 
-  </div> 
-</div>
+  <html>
+    <title>Herba'spice</title>
+    <%= stylesheet_link_tag "application", media: "all","data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-    <tr><h7><td align="right"><a href="/login/">My Account</a><br>
-                      <a href="/users/">Sign In</a></td></h7></tr>
-   <br><br>
-
-<div class="wrap">
-  <menu id="herbaspice-main-nav"> <h2>
-        <a href="/">Home</a>
-        <a href="/products/">Products</a>
-        <a href="/Health/">Health</a>
-        <a href="/About us/">About us</a>
-        <a href="/Contact/">Contact</a></h2>
-    </div></menu>
-  <br>
-  <div id="columns">
-    <div id="side">
-      <div id="cart">
-        <% unless @cart.blank? %>
-        <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-        <%= render @cart %>
-        <%end%>
-        <%end%>
-      </div> <br>
-<br>
-<%= form_tag products_path, :method => 'get' do %>  
-  <p>  
-    <%= text_field_tag :search, params[:search] %>  
-    <%= submit_tag "Search", :name => nil %>  
-  </p>  
-<% end %> 
-      <br><br><br>
-      <h2>Categories</h2>
-      <ul>
-        <li><a href="http://www..../Culinary herbs">Culinary herbs</a></li>
-        <li><a href="http://www..../Herbs for tea">Herbs for tea</a></li>
-        <li><a href="http://www..../Scented herbs">Scented herbs</a></li>
-        <li><a href="http://www..../Chiles">Chiles</a></li>
-        <li><a href="http://www..../Organic Spices">Organic Spices</a></li>
-        <li><a href="http://www..../Baking spices">Baking spices</a></li>
-        <li><a href="http://www..../Seeds">Seeds</a></li>
-        <li><a href="http://www..../Accessories">Accessories</a></li>
-      </ul>
-<% if session[:user_id] %>
-<ul>
-<li><%= link_to 'Orders', orders_path %></li>
-<li><%= link_to 'Products', products_path %></li>
-<li><%= link_to 'Users', users_path %></li>
-</ul>
-<%= button_to 'Logout', logout_path, method: :delete %>
-<% end %>
+  <body class="<%= controller.controller_name %>">
+    <div id="banner">
+      <%= image_tag "logo.jpg", :size=> "210x120" %>
+      <div id="page-title"><%= @page_title || "Herba'spice" %></div>
     </div>
-  </div>
-<div id="main">
-<%= yield %>
-<div id="mainWrapper"></div>
-</div>
+
+    <div>
+      <a href="/login/">My Account</a><br>
+      <a href="/users/">Sign In</a>
+    </div>
+
+    <nav id="herbaspice-main-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/products/">Products</a></li>
+        <li><a href="/Health/">Health</a></li>
+        <li><a href="/About us/">About us</a></li>
+        <li><a href="/Contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div id="columns">
+      <div id="side">
+        <div id="cart">
+          <% unless @cart.blank? %>
+          <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+          <%= render @cart %>
+          <%end%>
+          <%end%>
+        </div> <br><br>
+
+        <%= form_tag products_path, :method => 'get' do %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :name => nil %>
+        </p>
+        <% end %>
+        <br><br><br>
+        <h2>Categories</h2>
+        <ul>
+          <li><a href="http://www..../Culinary herbs">Culinary herbs</a></li>
+          <li><a href="http://www..../Herbs for tea">Herbs for tea</a></li>
+          <li><a href="http://www..../Scented herbs">Scented herbs</a></li>
+          <li><a href="http://www..../Chiles">Chiles</a></li>
+          <li><a href="http://www..../Organic Spices">Organic Spices</a></li>
+          <li><a href="http://www..../Baking spices">Baking spices</a></li>
+          <li><a href="http://www..../Seeds">Seeds</a></li>
+          <li><a href="http://www..../Accessories">Accessories</a></li>
+        </ul>
+
+        <% if session[:user_id] %>
+        <ul>
+          <li><%= link_to 'Orders', orders_path %></li>
+          <li><%= link_to 'Products', products_path %></li>
+          <li><%= link_to 'Users', users_path %></li>
+        </ul>
+        <%= button_to 'Logout', logout_path, method: :delete %>
+        <% end %>
+      </div> <!-- side -->
+    </div> <!-- columns -->
+
+    <div id="main">
+      <%= yield %>
+      <div id="mainWrapper"></div>
+    </div>
+
+  </body>
 </html>
-</body>
