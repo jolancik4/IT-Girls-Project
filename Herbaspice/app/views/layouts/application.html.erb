@@ -36,7 +36,7 @@
           <%= render @cart %>
           <%end%>
           <%end%>
-        </div> <br><br>
+        </div>
 
         <%= form_tag products_path, :method => 'get' do %>
         <p>
@@ -44,7 +44,7 @@
           <%= submit_tag "Search", :name => nil %>
         </p>
         <% end %>
-        <br><br><br>
+        
         <h2>Categories</h2>
         <ul>
           <li><a href="http://www..../Culinary herbs">Culinary herbs</a></li>
@@ -66,12 +66,12 @@
         <%= button_to 'Logout', logout_path, method: :delete %>
         <% end %>
       </div> <!-- side -->
+
+      <div id="main">
+        <%= yield %>
+        <div id="mainWrapper"></div>
+      </div>
+
     </div> <!-- columns -->
-
-    <div id="main">
-      <%= yield %>
-      <div id="mainWrapper"></div>
-    </div>
-
   </body>
 </html>

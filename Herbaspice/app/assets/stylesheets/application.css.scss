@@ -56,13 +56,12 @@ div#mainWrapper {
   #main {
      margin-left: 17em;
      padding: 1em;
-     background: white;
-     width: 100%;
+     background: #fff8dd;
   }
 
   #side {
     float: left;
-    padding: 1em 2em;
+    padding: 4em 2em;
     width: 13em;
     background: #142;
 
@@ -96,6 +95,13 @@ div#mainWrapper {
           font-size: small;
         }
       }
+    }
+
+    h2 {
+      color: brown;
+      font-size: 1.5em;
+      margin: 0;
+      padding: 40px 0 10px 0;
     }
   }
 }
