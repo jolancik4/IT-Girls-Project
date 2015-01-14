@@ -1,9 +1,12 @@
 body {
-  background-color: #fff;
+  background-color: #fff8dd;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 14px;
   line-height: 18px;
+  min-width: 600px;
+  max-width: 70%;
+  margin: 20px auto;
 }
 
 p, ol, ul, td {
