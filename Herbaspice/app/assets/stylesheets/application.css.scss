@@ -126,6 +126,26 @@ nav#herbaspice-main-nav {
   }
 }
 
+nav#herbaspice-user-nav {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+
+  ul {
+    display: table-row;
+
+    li {
+      display: table-cell;
+      margin: 0;
+      text-align: center;
+      font-style: normal;
+      font-size: 15px;
+      padding: 5px
+    }
+  }
+}
+
 //#START:form
 
 .herbaspice_form {

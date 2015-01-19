@@ -14,8 +14,22 @@
     </div>
 
     <div>
-      <a href="/login/">My Account</a><br>
-      <a href="/users/">Sign In</a>
+      <nav id="herbaspice-user-nav">
+        <ul>
+          <% if logged_in? %>
+            <li><%= link_to "Users", '#' %></li>
+            <li><%= link_to "Profile", current_user %></li>
+            <li><%= link_to "Settings" %></li>
+            <li>
+              <%= link_to "Log out", logout_path, method: "delete" %>
+            </li>
+        </ul>
+      </li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+        <% end %>
+        </ul>
+      </nav>
     </div>
 
     <nav id="herbaspice-main-nav">
