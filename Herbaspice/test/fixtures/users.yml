@@ -2,8 +2,9 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: dave
+  name: dave1
   password_digest: <%= BCrypt::Password.create('secret') %>
+  admin: true
 
 two:
   name: susannah

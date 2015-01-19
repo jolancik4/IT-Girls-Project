@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   has_secure_password
 after_destroy :ensure_an_admin_remains
+  validates :password, length: { minimum: 5 }, allow_blank: true
+
 
   private
     def ensure_an_admin_remains
