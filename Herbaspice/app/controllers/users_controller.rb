@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         log_in @user
-        format.html { redirect_to users_url, 
+        format.html { redirect_to index_url, 
           notice: "User #{@user.name} was successfully created." }
         format.json { render action: 'show',
           status: :created, location: @user }

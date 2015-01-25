@@ -11,14 +11,13 @@
     <div id="banner">
       <%= image_tag "logo.jpg", :size=> "210x120" %>
       <div id="page-title"><%= @page_title || "Herba'spice" %></div>
-    </div>
+  
 
     <div>
       <nav id="herbaspice-user-nav">
         <ul>
           <% if logged_in? %>
-            <li><%= link_to "Orders", orders_path %></li>
-            <li><%= link_to "Profile", current_user %></li>
+            <li><%= link_to "Cart", carts_path %></li>
             <li><%= link_to "Settings", edit_user_path(current_user) %></li>
             <li>
               <%= link_to "Log out", logout_path, method: "delete" %>
@@ -31,13 +30,11 @@
         </ul>
       </nav>
     </div>
-
+  </div>
     <nav id="herbaspice-main-nav">
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/products/">Products</a></li>
-        <li><a href="/Health/">Health</a></li>
-        <li><a href="/About us/">About us</a></li>
         <li><a href="/Contact/">Contact</a></li>
       </ul>
     </nav>
