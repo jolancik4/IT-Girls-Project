@@ -3,13 +3,14 @@ Herbaspice::Application.routes.draw do
   resources :line_items
   resources :carts
 
-  get 'admin' => 'admin#index'
   controller :sessions do
     get  'signup'  => 'users#new'
     get  'login' => :new
     post 'login' => :create
     delete 'logout' => :destroy
     resources :users
+    get 'admin' => 'admin#index'
+    get "admin_users" => "admin#users"
   end
 
   get "sessions/create"
