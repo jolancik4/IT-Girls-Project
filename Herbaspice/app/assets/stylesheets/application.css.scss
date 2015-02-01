@@ -128,9 +128,9 @@ nav#herbaspice-main-nav {
 
 nav#herbaspice-user-nav {
   display: table;
-  width: 100%;
   border-collapse: collapse;
   border: none;
+  float: right;
 
   ul {
     display: table-row;
@@ -138,9 +138,9 @@ nav#herbaspice-user-nav {
     li {
       display: table-cell;
       margin: 0;
-      text-align: center;
+      text-align: right;
       font-style: normal;
-      font-size: 15px;
+      font-size: 20px;
       padding: 5px
     }
   }
