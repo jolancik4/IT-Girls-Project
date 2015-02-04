@@ -3,6 +3,12 @@
 <% end %>
 
 <h1>Catalog</h1>
+	<%= form_tag store_index_path, :method => 'get' do %>  
+  		<p>  
+    		<%= text_field_tag :search, params[:search] %>  
+    		<%= submit_tag "Search", :name => nil %>  
+  		</p>  
+	<% end %> 
 	<% cache ['store', Product.latest] do %>
 		<% @products.each do |product| %>
 			<% cache ['entry', product] do %>
@@ -17,10 +23,5 @@
 				</div>
 			<% end %>
 		<% end %>
-		<%= form_tag store_index_path, :method => 'get' do %>  
-  <p>  
-    <%= text_field_tag :search, params[:search] %>  
-    <%= submit_tag "Search", :name => nil %>  
-  </p>  
-<% end %> 
+
 	<% end %>

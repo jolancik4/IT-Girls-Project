@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
       end
     end
 
+
   private
     def current_cart
       Cart.find(session[:cart_id])

@@ -5,4 +5,9 @@ module ApplicationHelper
     end
     content_tag("div", attributes, &block)
   end
+
+  	def admin?
+  		@current_user.name == "dave1"
+	end
+
 end
