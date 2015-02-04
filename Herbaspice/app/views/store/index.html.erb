@@ -17,4 +17,10 @@
 				</div>
 			<% end %>
 		<% end %>
+		<%= form_tag store_index_path, :method => 'get' do %>  
+  <p>  
+    <%= text_field_tag :search, params[:search] %>  
+    <%= submit_tag "Search", :name => nil %>  
+  </p>  
+<% end %> 
 	<% end %>
