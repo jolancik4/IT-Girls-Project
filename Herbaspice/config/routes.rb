@@ -1,4 +1,5 @@
 Herbaspice::Application.routes.draw do
+  get "contact/index"
   resources :orders
   resources :line_items
   resources :carts
