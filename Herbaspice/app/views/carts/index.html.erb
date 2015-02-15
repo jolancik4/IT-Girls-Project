@@ -1,5 +1,7 @@
 <h1>Listing carts</h1>
-
+<br>
+<%= link_to 'New Cart', new_cart_path %>
+<br>
 <table>
   <thead>
     <tr>
@@ -8,7 +10,6 @@
       <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @carts.each do |cart| %>
       <tr>
@@ -19,7 +20,6 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
 
-<%= link_to 'New Cart', new_cart_path %>
+
