@@ -50,13 +50,3 @@ gem 'bcrypt-ruby', '~> 3.0.1'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-gemspec
-
-# Compass for the dummy app
-gem 'compass', require: false
-
-group :development do
-  gem 'byebug', platform: :mri_21, require: false
-end
-
