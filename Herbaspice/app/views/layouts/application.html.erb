@@ -32,12 +32,12 @@
   </div>
 
 <div class="container">
-  <ul class="nav-tabs">
+  <ul class="nav nav-tabs">
         <li><a href="/">Home</a></li>
         <li><a href="/store/index/">Products</a></li>
         <li><a href="/contact/index/">Contact</a></li>
   </ul>
-</div>
+
 
     <div id="columns">
       <div id="side">
@@ -65,12 +65,12 @@
         <% end %>
 
       </div> <!-- side -->
+    </div>
 
-      <div id="main">
-        <%= yield %>
-        <div id="mainWrapper"></div>
-      </div>
+    <%= yield %>
 
-    </div> <!-- columns -->
+    </div>
+
   </body>
+
 </html>
