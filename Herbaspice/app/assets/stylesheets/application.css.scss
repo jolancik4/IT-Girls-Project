@@ -59,8 +59,6 @@ div#mainWrapper {
   #side {
     float: left;
     padding: 4em 2em;
-    width: 13em;
-    background: #142;
 
     form, div {
       display: inline;
@@ -71,14 +69,7 @@ div#mainWrapper {
     }
 
     #cart {
-      font-size: smaller;
-      color:     black;
-
       table {
-        border-top:    6px dotted #595;
-        border-bottom: 6px dotted #595;
-        border-right: 6px dotted #595;
-        border-left: 6px dotted #595;
         margin-bottom: 6px;
       }
     }
@@ -88,8 +79,6 @@ div#mainWrapper {
       li {
         list-style: none;
         a {
-          color: #bfb;
-          font-size: small;
         }
       }
     }
