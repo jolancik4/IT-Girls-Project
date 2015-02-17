@@ -33,9 +33,9 @@
 
 <div class="container">
   <ul class="nav nav-tabs">
-        <li><a href="/">Home</a></li>
-        <li><a href="/store/index/">Products</a></li>
-        <li><a href="/contact/index/">Contact</a></li>
+        <li><%= link_to 'Home', welcome_path, class: 'btn btn-mini btn-success' %></li>
+        <li><%= link_to 'Products', store_index_path, class: 'btn btn-mini btn-success' %></li>
+        <li><%= link_to 'Contact Us', contact_index_path, class: 'btn btn-mini btn-success' %></li>
   </ul>
 
 
