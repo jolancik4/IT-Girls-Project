@@ -38,9 +38,6 @@
         <li><%= link_to 'Contact Us', contact_index_path, class: 'btn btn-mini btn-success btn-lg' %></li>
   </ul>
 <br>
-
-
-
           <% if logged_in? and admin? %>
           <h2>Admin Menu</h2>
             <li><%= link_to "Carts", carts_path %></li>
@@ -56,13 +53,9 @@
         </p>
         <% end %>
 
-      </div> <!-- side -->
+      </div>
     </div>
-
     <%= yield %>
-
     </div>
-
   </body>
-
 </html>
