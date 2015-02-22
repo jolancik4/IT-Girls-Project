@@ -9,6 +9,12 @@
 .products {
   table {
     border-collapse: collapse;
+
+    img {
+    float: left;
+    width:  60px;
+    height: 70px;
+    }
   }
 
   table tr td {
